@@ -1,0 +1,107 @@
+.App {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.App .data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  width: 80%;
+}
+
+.App .h1Padrao {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.App .data .field {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.App .data .field span {
+  padding: 10px 0;
+}
+
+.App .data .field input {
+  padding: 10px;
+  border-radius: 5px;
+  width: auto;
+}
+
+.App .data .field span {
+  flex: 1;
+}
+
+.divDoBtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.btnDoDiv {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: rgb(61, 61, 252);
+  color: white;
+  font-size: medium;
+  cursor: pointer;
+}
+
+.btnDoDiv:hover {
+  background-color: rgb(84, 84, 253);
+}
+
+.App .receipt {
+  padding: 20px 30px;
+  font-size: smaller;
+  width: 80%;
+}
+
+.App .receipt .footerP {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  padding: 30px 200px;
+}
+
+.App .receipt .footer {
+  text-align: center;
+}
+
+.data-receip {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+
+.footEnd {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 100px;
+}
+
+.footEndP {
+  font-size: 11px;
+}
+
+@media print {
+  .App .data {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  
+  .App .receipt {
+    display: none;
+  }
+}
