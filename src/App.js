@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 import monthNames from './monthNames';
 import './App.css';
 
@@ -30,6 +32,14 @@ function App() {
   const formatCpfCnpjbenef = () => {
     const value = emitterCpf.length === 11 ? emitterCpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4') : emitterCpf.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
     return value;
+  };
+
+  const handleServiceChange = (value) => {
+    setService(value);
+  };
+
+  const createMarkup = (html) => {
+    return { __html: html };
   };
 
   return (
@@ -71,7 +81,22 @@ function App() {
         </div>
         <div className="field">
           <span>Descrição:</span>
-          <input type="text" value={service} onChange={({ target: { value } }) => setService(value.slice(0, 70))} placeholder='Descreva sobre o que se refere o recibo...' />
+          <ReactQuill
+            theme="snow"
+            value={service}
+            onChange={handleServiceChange}
+            modules={{
+              toolbar: [
+                ['bold', 'italic', 'underline', 'strike'],
+                [{ 'list': 'ordered' }, { 'list': 'bullet' }]
+              ],
+            }}
+            formats={[
+              'bold', 'italic', 'underline', 'strike',
+              'list', 'bullet',
+            ]}
+            placeholder='Descreva sobre o que se refere o recibo...'
+          />
         </div>
         <div className="field">
           <span>Data:</span>
@@ -126,7 +151,7 @@ function App() {
         <h3>Serviço/Produto</h3>
         <h4>Descrição:</h4>
         <div className='data-receip'>
-          <p>{service}</p>
+          <div dangerouslySetInnerHTML={createMarkup(service)} />
           <p><strong>Valor:</strong> R$ {price}</p>
         </div>
 
