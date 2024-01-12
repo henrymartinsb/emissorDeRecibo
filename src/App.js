@@ -158,11 +158,11 @@ function App() {
         </div>
 
         <div className='footEnd'>
-          <p className='footEndP'>Este recibo serve como comprovante do pagamento realizado e recebido, não restando mais nada em aberto, referente ao que está descrito no documento.</p>
+          {/* <p className='footEndP'>Este recibo serve como comprovante do pagamento realizado e recebido, não restando mais nada em aberto, referente ao que está descrito no documento.</p> */}
           <p className="footerP"></p>
           <div className="footer">
             {emitter}<br />
-            {determineCpfCnpjLabel()} {formatCpfCnpjbenef()}
+            {/* {determineCpfCnpjLabel()} */} {formatCpfCnpjbenef()}
           </div>
         </div>
       </div>

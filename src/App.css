@@ -61,6 +61,7 @@
   padding: 20px 30px;
   font-size: smaller;
   width: 80%;
+  margin: 0;
 }
 
 .App .receipt .footerP {
@@ -95,7 +96,7 @@
 }
 
 .footEndP {
-  font-size: 11px;
+  font-size: 10px;
 }
 
 @media print {
