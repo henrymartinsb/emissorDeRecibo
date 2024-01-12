@@ -152,7 +152,9 @@ function App() {
         <h4>Descrição:</h4>
         <div className='data-receip'>
           <div dangerouslySetInnerHTML={createMarkup(service)} />
-          <p><strong>Valor:</strong> R$ {price}</p>
+        </div>
+        <div className='valor-receip'>
+          <p><strong>Valor total:</strong> R$ {price}</p>
         </div>
 
         <div className='footEnd'>
@@ -160,7 +162,7 @@ function App() {
           <p className="footerP"></p>
           <div className="footer">
             {emitter}<br />
-            {determineCpfCnpjLabel()} {formatCpfCnpj()}
+            {determineCpfCnpjLabel()} {formatCpfCnpjbenef()}
           </div>
         </div>
       </div>
